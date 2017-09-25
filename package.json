@@ -4,7 +4,8 @@
   "description": "processing PJL jobs in streams",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=test && mocha --ui tdd test"
+    "test": "set NODE_ENV=test && mocha --ui tdd test",
+    "style": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/cepharum/pjl-stream#readme",
   "devDependencies": {
     "eslint": "^4.7.2",
+    "eslint-config-cepharum": "^1.0.2",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
