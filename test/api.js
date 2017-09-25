@@ -28,29 +28,23 @@
 
 "use strict";
 
-const { Stream } = require( "parsing-stream" );
-const Context = require( "./context" );
+const { Transform } = require( "stream" );
+
+const Should = require( "should" );
+
+const API = require( "../" );
 
 
-/**
- * @name PJLStream
- * @type {PJLStream}
- */
-module.exports = class PJLStream extends Stream {
-	/**
-	 * @param {object} options
-	 */
-	constructor( options = {} ) {
-		if ( options.hasOwnProperty( "context" ) ) {
-			if ( !( options.context instanceof Context ) ) {
-				throw new TypeError( "invalid stream context" );
-			}
-		} else {
-			options.context = new Context();
-		}
+suite( "pjl-streaming API", function() {
+	test( "exposes stream class", function() {
+		Should.exist( API.Stream );
+		new API.Stream().should.be.instanceOf( Transform );
+	} );
 
-		super( options );
+	test( "exposes context class for deriving custom contexts", function() {
+		Should.exist( API.Context );
 
-		options.parser = options.context.getParserByName( "start" );
-	}
-};
+		const stream = new API.Stream();
+		stream.should.have.property( "context" ).which.is.instanceOf( API.Context );
+	} );
+} );
