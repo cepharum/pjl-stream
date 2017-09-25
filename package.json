@@ -33,6 +33,6 @@
     "should": "^13.1.0"
   },
   "dependencies": {
-    "parsing-stream": "*"
+    "parsing-stream": "0.0.3"
   }
 }
