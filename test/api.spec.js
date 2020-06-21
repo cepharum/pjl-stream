@@ -30,18 +30,19 @@
 
 const { Transform } = require( "stream" );
 
+const { describe, it } = require( "mocha" );
 const Should = require( "should" );
 
 const API = require( "../" );
 
 
-suite( "pjl-streaming API", function() {
-	test( "exposes stream class", function() {
+describe( "pjl-streaming API", function() {
+	it( "exposes stream class", function() {
 		Should.exist( API.Stream );
 		new API.Stream().should.be.instanceOf( Transform );
 	} );
 
-	test( "exposes context class for deriving custom contexts", function() {
+	it( "exposes context class for deriving custom contexts", function() {
 		Should.exist( API.Context );
 
 		const stream = new API.Stream();

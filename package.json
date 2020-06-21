@@ -4,7 +4,7 @@
   "description": "processing PJL jobs in streams",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=test && mocha --ui tdd test",
+    "test": "set NODE_ENV=test && mocha --ui tdd --recursive 'test/**/*.spec.js'",
     "style": "eslint ."
   },
   "repository": {
