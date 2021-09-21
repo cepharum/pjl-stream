@@ -1,3 +1,7 @@
 {
-	"extends": "eslint-config-cepharum"
+	"extends": "eslint-config-cepharum",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2020
+	}
 }

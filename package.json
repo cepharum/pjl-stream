@@ -1,36 +1,43 @@
 {
-  "name": "pjl-stream",
-  "version": "0.0.1",
-  "description": "processing PJL jobs in streams",
-  "main": "index.js",
-  "scripts": {
-    "test": "set NODE_ENV=test && mocha --ui tdd --recursive 'test/**/*.spec.js'",
-    "style": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cepharum/pjl-stream.git"
-  },
-  "keywords": [
-    "stream",
-    "parser",
-    "filter",
-    "PJL"
-  ],
-  "author": "Thomas Urban <thomas.urban@cepharum.de>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cepharum/pjl-stream/issues"
-  },
-  "homepage": "https://github.com/cepharum/pjl-stream#readme",
-  "devDependencies": {
-    "eslint": "^7.25.0",
-    "eslint-config-cepharum": "^1.0.12",
-    "eslint-plugin-promise": "^5.1.0",
-    "mocha": "^8.3.2",
-    "should": "^13.2.3"
-  },
-  "dependencies": {
-    "parsing-stream": "^0.0.3"
-  }
+	"name": "pjl-stream",
+	"version": "0.0.1",
+	"description": "processing PJL jobs in streams",
+	"type": "module",
+	"module": "index.mjs",
+	"scripts": {
+		"test": "mocha --ui tdd --recursive 'test/**/*.spec.*'",
+		"coverage": "c8 --all --reporter=text --reporter=html mocha --ui tdd --recursive 'test/**/*.spec.*'",
+		"lint": "eslint {**/*,*}.{js,mjs,cjs}"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cepharum/pjl-stream.git"
+	},
+	"keywords": [
+		"stream",
+		"parser",
+		"filter",
+		"PJL"
+	],
+	"author": "Thomas Urban <thomas.urban@cepharum.de>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/cepharum/pjl-stream/issues"
+	},
+	"homepage": "https://github.com/cepharum/pjl-stream#readme",
+	"devDependencies": {
+		"c8": "^7.7.1",
+		"eslint": "^7.25.0",
+		"eslint-config-cepharum": "^1.0.12",
+		"eslint-plugin-promise": "^5.1.0",
+		"mocha": "^8.3.2",
+		"should": "^13.2.3"
+	},
+	"dependencies": {
+		"parsing-stream": "^0.0.3"
+	},
+	"files": [
+		"lib",
+		"index.mjs"
+	]
 }

@@ -26,39 +26,5 @@
  * @author: cepharum
  */
 
-"use strict";
-
-const { SubstringParser } = require( "parsing-stream" );
-
-const Basics = require( "../basics" );
-const Job = require( "../job" );
-
-
-const UEL = Buffer.from( Basics.UEL, "ascii" );
-
-
-/**
- * Parses stream for matching UEL sequence starting (another) PJL job.
- *
- * @type {StartParser}
- * @name StartParser
- */
-module.exports = class StartParser extends SubstringParser {
-	/**
-	 */
-	constructor() {
-		super( UEL );
-
-		this.onMatch = function( context ) {
-			const newJob = new Job();
-			if ( !Array.isArray( context.jobs ) ) {
-				context.jobs = [];
-			}
-
-			context.jobs.push( newJob );
-			context.currentJob = newJob;
-
-			return context.getParserByName( "command-or-uel" );
-		};
-	}
-};
+export { Context } from "./lib/context.mjs";
+export { Stream } from "./lib/stream.mjs";
